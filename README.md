@@ -27,6 +27,22 @@ Here is an example of wading through server creation for Amazon Elastic Compute 
     >> server.destroy # cleanup after yourself or regret it, trust me
     true
 
+## Ruby 1.8.7
+
+Ruby 1.8.7 is [no longer officially supported](http://www.ruby-lang.org/en/news/2011/10/06/plans-for-1-8-7/),
+so it may contain public security vulnerabilities. For this reason, it is strongly recommended that
+you run Fog on Ruby 1.9.2 or later.
+
+With this caveat, if you wish to install `fog` on Ruby 1.8.7, you must first you must first install
+`nokogiri` version 1.5.
+
+    gem install nokogiri -v '~>1.5.0'
+
+Likewise, if you are bundling `fog` into your application on Ruby 1.8.7, you must add the following
+line to your `Gemfile`.
+
+    gem 'nokogiri', '~>1.5.0'
+
 ## Collections
 
 A high level interface to each cloud is provided through collections, such as `images` and `servers`.
